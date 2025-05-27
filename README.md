@@ -62,13 +62,15 @@ A modern Android base project built with best practices and reusable components.
 
 ---
 
-   📄 License
+## 📄 License
+
 This project is licensed under the MIT License.
 Feel free to use, modify, and share!
 
 ---
 
-🙌 Contributing
+## 📄 🙌 Contributing
+
 Pull requests are welcome! Please fork the repo and submit a PR if you:
 Add useful base components
 Fix issues
@@ -76,7 +78,8 @@ Want to extend the utility of the project
 
 ---
 
-👨‍💻 Author
+## 👨‍💻 Author
+
 Bilal Nasir
 
 bilalnasir6860@gmail.com
