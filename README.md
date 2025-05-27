@@ -8,7 +8,7 @@ A modern Android base project built with best practices and reusable components.
 
 - ✅ MVVM Architecture (Clean & Scalable)
 - ✅ Hilt for Dependency Injection
-- ✅ Room for Local Database (with Base Repository/ViewModel)
+- ✅ Room for Local Database (with Base ViewModel)
 - ✅ Retrofit for API calls
 - ✅ Kotlin Coroutines + Flow
 - ✅ SharedPreferences Helper
