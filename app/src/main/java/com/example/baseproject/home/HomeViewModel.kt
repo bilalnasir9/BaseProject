@@ -1,4 +1,4 @@
-package com.example.baseproject
+package com.example.baseproject.home
 
 import androidx.lifecycle.MutableLiveData
 import com.example.baseproject.base.BaseViewModel
@@ -8,7 +8,7 @@ class HomeViewModel :BaseViewModel() {
     val text = MutableLiveData<String>()
 
     fun loadData() {
-        launchWithErrorHandling {
+        launchOnMain {
             delay(300)
             text.postValue("Data loaded!")
         }

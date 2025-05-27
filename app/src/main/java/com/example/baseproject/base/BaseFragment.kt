@@ -1,7 +1,6 @@
-package com.example.qiblaapp.baseproject
+package com.example.baseproject.base
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,10 +14,19 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
     private var _binding: VB? = null
     protected val binding get() = _binding!!
 
+
+
+    open fun onFragmentBackPressed(): Boolean = false // Allow fragment to intercept back press
+
+
+
+
+
+
     abstract fun provideViewBinding(inflater: LayoutInflater, container: ViewGroup?): VB
     open fun observeViewModel() {}
     open fun setupViews() {}
-    open fun onBackPressedCallback(): Boolean = false
+//    open fun onBackPressedCallback(): Boolean = false
 
 
     override fun onCreateView(
@@ -35,6 +43,7 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
         handleBackPress()
         setupViews()
         observeViewModel()
+
     }
 
     override fun onDestroyView() {
@@ -53,9 +62,11 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
             viewLifecycleOwner,
             object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
-                    if (!onBackPressedCallback()) {
+                    if (!onFragmentBackPressed()) {
                         isEnabled = false
-                        requireActivity().onBackPressed()
+//                        requireActivity().onBackPressed()
+                        requireActivity().onBackPressedDispatcher.onBackPressed()
+
                     }
                 }
             }

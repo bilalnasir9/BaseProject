@@ -1,11 +1,11 @@
-package com.example.baseproject
+package com.example.baseproject.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.example.baseproject.base.showToast
 import com.example.baseproject.databinding.FragmenthomeBinding
-import com.example.qiblaapp.baseproject.BaseFragment
+import com.example.baseproject.base.BaseFragment
 
 class HomeFragment : BaseFragment<FragmenthomeBinding>() {
     private val viewModel: HomeViewModel by viewModels()
@@ -33,8 +33,11 @@ class HomeFragment : BaseFragment<FragmenthomeBinding>() {
         }
     }
 
-    override fun onBackPressedCallback(): Boolean {
+    override fun onFragmentBackPressed(): Boolean {
         requireContext().showToast("Back press in HomeFragment!")
         return true
     }
+//    override fun onBackPressedCallback(): Boolean {
+//        return true
+//    }
 }

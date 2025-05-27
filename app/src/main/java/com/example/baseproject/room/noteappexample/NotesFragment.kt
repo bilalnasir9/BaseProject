@@ -1,13 +1,12 @@
 package com.example.baseproject.room.noteappexample
 
-import android.os.Build.VERSION_CODES.S
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import com.example.baseproject.base.showToast
 import com.example.baseproject.databinding.FragmentnotesBinding
-import com.example.qiblaapp.baseproject.BaseFragment
+import com.example.baseproject.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
-import java.util.UUID
 
 @AndroidEntryPoint
 class NotesFragment : BaseFragment<FragmentnotesBinding>() {
@@ -40,6 +39,9 @@ class NotesFragment : BaseFragment<FragmentnotesBinding>() {
     override fun observeViewModel() {
         viewModel.notes.observe(viewLifecycleOwner) {
             adapter.updateList(it)
+        }
+        viewModel.errorMessage.observe(viewLifecycleOwner) {
+            it?.let { it1 -> requireContext().showToast(it1) }
         }
     }
 

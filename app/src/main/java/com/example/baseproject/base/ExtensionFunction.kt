@@ -10,6 +10,8 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
+import java.text.SimpleDateFormat
+import java.util.Date
 import java.util.Locale
 
 fun View.visible() {
@@ -29,7 +31,8 @@ fun Context.showToast(message: String, length: Int = Toast.LENGTH_SHORT) {
         this, message, length
     ).show()
 }
-fun View.showSnackbar(message: String,length: Int = Snackbar.LENGTH_SHORT) {
+
+fun View.showSnackbar(message: String, length: Int = Snackbar.LENGTH_SHORT) {
     Snackbar.make(this, message, length).show()
 }
 
@@ -42,6 +45,7 @@ fun Context.shareApp() {
     )
     startActivity(i2)
 }
+
 fun Context.rateApp() {
     try {
         val intent =
@@ -73,6 +77,7 @@ fun Context.showMoreApps(url: String) {
         e.printStackTrace()
     }
 }
+
 fun Context.isInternetAvailable(): Boolean {
     val connectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
     val network = connectivityManager.activeNetwork ?: return false
@@ -83,19 +88,6 @@ fun Context.isInternetAvailable(): Boolean {
     return hasInternet
 }
 
-fun Context.changeAppLanguage(languageCode: String) {
-    try {
-        val locale = Locale(languageCode)
-        Locale.setDefault(locale)
-        val config = Configuration(resources.configuration)
-        config.setLocale(locale)
-
-        resources.updateConfiguration(config, resources.displayMetrics)
-        Log.d("LanguageChange", "Language set to: $languageCode")
-    } catch (e: Exception) {
-        Log.e("LanguageChange", "Failed to change language", e)
-    }
-}
 
 fun Context.sendFeedbackEmail(to: String, subject: String = "", body: String = "") {
     try {
@@ -110,6 +102,7 @@ fun Context.sendFeedbackEmail(to: String, subject: String = "", body: String = "
         showToast("Error sending email")
     }
 }
+
 fun Context.startNewActivity(intent: Intent) {
     try {
         startActivity(intent)
@@ -117,6 +110,15 @@ fun Context.startNewActivity(intent: Intent) {
         Log.e("startNewActivity", "Error starting activity", e)
     }
 }
+
+fun Any.showlogD(tag: String = this::class.java.simpleName, message: String) {
+    Log.d(tag, message)
+}
+
+fun Any.showlogE(message: String) {
+    Log.e(this::class.java.simpleName, message)
+}
+
 
 
 

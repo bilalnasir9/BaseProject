@@ -66,6 +66,10 @@ dependencies {
 
     // Retrofit + Gson Converter
     implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.logging.interceptor)
+
+
 
     // ViewModel delegate support in Fragment
     implementation(libs.androidx.fragment.ktx)
@@ -78,5 +82,9 @@ dependencies {
     implementation("androidx.room:room-runtime:2.6.1")
     kapt("androidx.room:room-compiler:2.6.1")
     implementation("androidx.room:room-ktx:2.6.1")
+
+    //Firebase
+//    implementation("com.google.firebase:firebase-messaging:24.1.1")
+    implementation("com.google.android.play:review:2.0.2")
 
 }

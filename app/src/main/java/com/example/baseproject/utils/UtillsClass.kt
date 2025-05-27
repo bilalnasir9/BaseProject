@@ -1,20 +1,21 @@
-package com.example.qiblaapp.baseproject
+package com.example.baseproject.utils
 
-import android.app.Activity
-import android.content.Context
-import android.content.Intent
-import android.content.res.Configuration
-import android.net.ConnectivityManager
-import android.net.NetworkCapabilities
-import android.net.Uri
-import android.util.DisplayMetrics
-import android.util.Log
-import java.net.InetAddress
-import java.net.InetSocketAddress
-import java.net.Socket
+import java.text.SimpleDateFormat
+import java.util.Date
 import java.util.Locale
 
-abstract class UtillsClass{
+object UtillsClass {
+
+    fun getCurrentTimestamp(): String {
+        try {
+            val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
+            return sdf.format(Date())
+        } catch (e: Exception) {
+            e.printStackTrace()
+            return ""
+        }
+    }
 
 
+    //  other utils method..
 }

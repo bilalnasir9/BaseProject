@@ -8,7 +8,7 @@ class UserViewModel(val respository: UserRepository):BaseViewModel() {
 
     val userData = MutableLiveData<User>()
     fun loadUser() {
-        launchWithErrorHandling {
+        launchOnMain {
             when (val result = respository.getUserData()) {
                 is Resource.Success -> userData.postValue(result.data)
                 is Resource.Error -> errorMessage.postValue(result.message)

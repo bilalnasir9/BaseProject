@@ -4,28 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:padding="16dp"
-    android:background="#5D1717"
     android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="16dp"
     tools:context=".home.MainActivity">
 
-    <TextView
-        android:id="@+id/maintext"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:text="Hello bilal!"
-        android:textColor="@color/white"
-        android:gravity="center"
-        app:layout_constraintBottom_toTopOf="@+id/btnnn"
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressbar"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/btn_loaddata"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnnn"
+        android:id="@+id/btn_loaddata"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="click me"
+        android:text="Fetch data"
         app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

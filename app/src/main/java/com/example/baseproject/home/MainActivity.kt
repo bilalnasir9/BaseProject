@@ -1,19 +1,20 @@
-package com.example.baseproject
+package com.example.baseproject.home
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
-import androidx.activity.viewModels
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.baseproject.R
+import com.example.baseproject.base.showlogD
 import com.example.baseproject.databinding.ActivityMainBinding
-import com.example.baseproject.room.noteappexample.NotesFragment
+import com.example.baseproject.retrofit.example.SomeDataFragment
+import com.example.baseproject.utils.UtillsClass.getCurrentTimestamp
 import com.example.qiblaapp.baseproject.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>() {
-    private val viewModel: MainViewModel by viewModels()
 
     override fun provideViewBinding(): ActivityMainBinding {
         return ActivityMainBinding.inflate(layoutInflater)
@@ -24,15 +25,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 //            binding.maintext.text = it
 //        }
 
-
-
-//        viewModel.isLoading.observe(this) { isLoading ->
-//            // binding.progressBar.isVisible = isLoading
-//        }
-//
-//        viewModel.errorMessage.observe(this) {
-//            showToast(it)
-//        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,6 +35,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        showlogD(message = "timestamp: " + getCurrentTimestamp())
+
     }
 
     override fun onBackPressedCallback(): Boolean {
@@ -52,11 +46,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     override fun setupViews() {
         supportFragmentManager.beginTransaction()
-            .replace(binding.containerr.id, NotesFragment())
+            .replace(binding.containerr.id, SomeDataFragment())
             .commit()
-
-    //        binding.btnnn.setOnClickListener {
-//                viewModel.loadData()
-//        }
     }
 }

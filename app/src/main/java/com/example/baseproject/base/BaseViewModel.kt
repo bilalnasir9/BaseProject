@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 open class BaseViewModel :ViewModel(){
@@ -15,8 +16,22 @@ open class BaseViewModel :ViewModel(){
         isLoading.postValue(false)
         errorMessage.postValue(throwable.message ?: "Something went wrong")
     }
-    fun launchWithErrorHandling(block: suspend CoroutineScope.() -> Unit) {
+    fun launchOnMain(block: suspend CoroutineScope.() -> Unit) {
         viewModelScope.launch(errorHandler) {
+            isLoading.postValue(true)
+            try {
+                block()
+            } catch (e: Exception) {
+                errorMessage.postValue(e.localizedMessage)
+            } finally {
+                isLoading.postValue(false)
+            }
+        }
+    }
+
+
+    fun launchOnIO(block: suspend () -> Unit) {
+        viewModelScope.launch(Dispatchers.IO) {
             isLoading.postValue(true)
             try {
                 block()
