@@ -58,7 +58,7 @@ A modern Android base project built with best practices and reusable components.
 ## 📦 Getting Started
 
 1. **Clone this repo:**
-   git clone https://github.com/yourusername/android-base-project.git
+   git clone https://github.com/bilalnasir9/BaseProject.git
 
 ---
 
@@ -74,4 +74,10 @@ Add useful base components
 Fix issues
 Want to extend the utility of the project
 
+---
+
+👨‍💻 Author
+Bilal Nasir
+bilalnasir6860@gmail.com
+🔗 LinkedIn Profile: linkedin.com/in/bilal-nasir-44059319a
 
