@@ -45,8 +45,8 @@ class SomeDataFragment : BaseFragment<FragmentsomedataBinding>() {
         }
     }
 
-//    override fun onBackPressedCallback(): Boolean {
-//        requireContext().showToast("Back pressed!")
-//        return true
-//    }
+
+    override fun onFragmentBackPressed(): Boolean {
+        return true
+    }
 }

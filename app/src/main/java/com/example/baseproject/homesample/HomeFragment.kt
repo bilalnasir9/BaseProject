@@ -1,4 +1,4 @@
-package com.example.baseproject.home
+package com.example.baseproject.homesample
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

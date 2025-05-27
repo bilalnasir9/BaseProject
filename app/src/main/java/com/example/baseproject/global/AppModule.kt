@@ -2,7 +2,7 @@ package com.example.baseproject.global
 
 import android.content.Context
 import androidx.room.Room
-import com.example.baseproject.room.noteappexample.AppDatabase
+import com.example.baseproject.room.AppDatabase
 import com.example.baseproject.room.noteappexample.NoteDAO
 import dagger.Module
 import dagger.Provides

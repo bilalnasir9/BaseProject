@@ -1,4 +1,4 @@
-package com.example.baseproject.home
+package com.example.baseproject.homesample
 
 import androidx.lifecycle.MutableLiveData
 import com.example.baseproject.base.BaseViewModel

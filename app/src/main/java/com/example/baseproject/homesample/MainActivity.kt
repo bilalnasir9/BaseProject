@@ -1,14 +1,15 @@
-package com.example.baseproject.home
+package com.example.baseproject.homesample
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.baseproject.R
+import com.example.baseproject.base.showToast
 import com.example.baseproject.base.showlogD
 import com.example.baseproject.databinding.ActivityMainBinding
-import com.example.baseproject.retrofit.example.SomeDataFragment
 import com.example.baseproject.utils.UtillsClass.getCurrentTimestamp
+import com.example.baseproject.views.dialogs.SampleDialog
 import com.example.qiblaapp.baseproject.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -37,6 +38,14 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         }
         showlogD(message = "timestamp: " + getCurrentTimestamp())
 
+        SampleDialog(
+            onConfirm = {
+                showToast("confirm")
+            },
+            onCancel = {
+                showToast("cancel")
+            }
+        ).show(supportFragmentManager, "SampleDialog")
     }
 
     override fun onBackPressedCallback(): Boolean {
@@ -45,8 +54,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     override fun setupViews() {
-        supportFragmentManager.beginTransaction()
-            .replace(binding.containerr.id, SomeDataFragment())
-            .commit()
+//        supportFragmentManager.beginTransaction()
+//            .replace(binding.containerr.id, SomeDataFragment())
+//            .commit()
     }
 }

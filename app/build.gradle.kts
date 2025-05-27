@@ -83,8 +83,7 @@ dependencies {
     kapt("androidx.room:room-compiler:2.6.1")
     implementation("androidx.room:room-ktx:2.6.1")
 
-    //Firebase
-//    implementation("com.google.firebase:firebase-messaging:24.1.1")
+    // In App Review Dialog
     implementation("com.google.android.play:review:2.0.2")
 
 }
