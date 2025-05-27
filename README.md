@@ -79,5 +79,4 @@ Want to extend the utility of the project
 👨‍💻 Author
 Bilal Nasir
 bilalnasir6860@gmail.com
-🔗 LinkedIn Profile: linkedin.com/in/bilal-nasir-44059319a
-
+https://www.linkedin.com/in/bilal-nasir-44059319a/
