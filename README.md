@@ -78,10 +78,11 @@ Want to extend the utility of the project
 
 ---
 
-## 👨‍💻 Author
+## 👨‍💻 About Me
 
-Bilal Nasir
+I'm a passionate Android developer who loves building clean, user-friendly, and meaningful apps. This project was created to serve the community.
 
-bilalnasir6860@gmail.com
-
-https://www.linkedin.com/in/bilal-nasir-44059319a/
+- 📧 Email: [bilalnasir6860@gmail.com](mailto:bilalnasir6860@gmail.com)  
+- 🔗 LinkedIn: [https://www.linkedin.com/in/bilal-nasir-44059319a](https://www.linkedin.com/in/bilal-nasir-44059319a)
+  
+Feel free to connect with me for collaboration, questions, or feedback!
